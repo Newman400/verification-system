@@ -1,0 +1,26 @@
+{
+    "functions": {
+        "*.php": {
+            "runtime": "vercel-php@0.7.1"
+        }
+    },
+    "routes": [
+        {
+            "src": "/assets/(.*)",
+            "dest": "/assets/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
+        }
+    ],
+    "env": {
+        "MONGODB_URI": "@mongodb_uri",
+        "ADMIN_PASSWORD": "@admin_password"
+    },
+    "build": {
+        "env": {
+            "COMPOSER_MIRROR_PATH_REPOS": "1"
+        }
+    }
+}
